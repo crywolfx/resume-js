@@ -15,14 +15,21 @@
   var myCloudEl = document.querySelector('.my_cloud');
   var vueKey = Object.keys(myCloudEl.dataset)[0];
   // 添加样式内容
-  styleElement.textContent = `
-  @media print {
-    .my_cloud[${vueKey}] {
-      visibility: visible !important;
-    }
-  }  
-`;
+  styleElement.textContent = `@media print{.my_cloud [data-${vueKey}]{visibility:visible}}`;
   // 将 style 元素插入到 head 中
   document.head.appendChild(styleElement);
-  // Your code here...
+
+  var rightEl = document.querySelector('.my_cloud_r');
+  var tplAllEl = document.querySelector('.tpl_all');
+  var containerEl = document.querySelector('.resume_main');
+  var pageLineEl = document.querySelector('.page_line');
+  var downLoadImgBoxEl = document.querySelector('#downLoadImgBox');
+  var downLoadImgBoxMobileEl = document.querySelector('#downLoadImgBoxMobile');
+
+  [rightEl, pageLineEl, downLoadImgBoxEl, downLoadImgBoxMobileEl].forEach(e => e.style.display = 'none');
+  [tplAllEl, containerEl].forEach(e => {
+    e.style.padding = 0;
+    e.style.width = 'auto';
+  })
+
 })();
