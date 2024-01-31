@@ -15,12 +15,11 @@
   // 添加样式内容
   styleElement.textContent = `
   @media print {
-    .my_cloud[data-v-2ca7c262] {
+    .my_cloud {
       visibility: visible !important;
     }
-  }
+  }  
 `;
-
   // 将 style 元素插入到 head 中
   document.head.appendChild(styleElement);
   // Your code here...
