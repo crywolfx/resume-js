@@ -12,10 +12,12 @@
 (function () {
   'use strict';
   var styleElement = document.createElement('style');
+  var myCloudEl = document.querySelector('.my_cloud');
+  var vueKey = Object.keys(myCloudEl.dataset)[0];
   // 添加样式内容
   styleElement.textContent = `
   @media print {
-    .my_cloud {
+    .my_cloud[${vueKey}] {
       visibility: visible !important;
     }
   }  
